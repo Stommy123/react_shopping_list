@@ -1,17 +1,13 @@
 import React from 'react';
-import ItemHeader from './ItemHeader.jsx';
-import InCart from './InCart.jsx';
-import ToBuy from './ToBuy.jsx';
+import Item from './Item.jsx'
 
 const ShoppingList = ({ inCart, needToBuy, handleChange }) =>
         <div className="shopping-list">
           <div className="to-buy">
-            <ItemHeader title="Need To Buy" />
-            { needToBuy.map((item,i) => <ToBuy item={item} key={i} handleChange={handleChange} /> )}
+            { needToBuy.map((item,i) => <Item symbol="+" status="add" item={item} key={i} handleChange={handleChange} /> )}
           </div>
            <div className="cart">
-               <ItemHeader title="In My Cart" />
-               { inCart.map((item, i) => <InCart item={item} key={i} handleChange={handleChange} /> )}
+               { inCart.map((item, i) => <Item symbol="-" status="remove" item={item} key={i} handleChange={handleChange} /> )}
            </div>
         </div>
 

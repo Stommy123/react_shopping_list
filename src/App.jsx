@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     const { shoppingList } = this.state
-    const needToBuy = shoppingList.filter(e => e.inCart === false)
+    const needToBuy = shoppingList.filter(e => !e.inCart)
     const inCart = shoppingList.filter(e => e.inCart)
     const itemValidation = shoppingList.map(e => e.item.toLowerCase())
     return [
