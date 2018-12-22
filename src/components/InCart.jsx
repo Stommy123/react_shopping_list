@@ -6,7 +6,7 @@ const InCart = ({ item, handleChange }) =>
     <div className="item-name">
       <span>{item.item}</span>
     </div>
-    <ItemButton symbol={"-"} item={item} handleChange={handleChange} status="decrement" />
+    <ItemButton symbol={"-"} item={item} handleChange={handleChange} status="remove" />
   </div>
 
 

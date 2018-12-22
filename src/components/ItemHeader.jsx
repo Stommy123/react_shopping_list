@@ -1,8 +1,5 @@
 import React from 'react';
 
-const ItemHeader = ({ title }) =>
-  <header>
-    {title}
-  </header>
+const ItemHeader = ({ title }) => <header class=" head list-type">{title}</header>
 
 export default ItemHeader;
