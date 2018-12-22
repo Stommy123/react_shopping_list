@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import initialList from './data/shoppingList';
+import ShoppingList from './components/ShoppingList';
+import Form from './components/Form';
 
 class App extends Component {
+  state = {
+    shoppingList: initialList
+  }
+
+  addItem = item => {
+
+  }
+
   render() {
+    const { shoppingList } = this.state
+    const needToBuy = shoppingList.filter(e => e.inCart === false)
+    const inCart = shoppingList.filter(e => e.inCart)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <ShoppingList needToBuy={needToBuy} inCart={inCart} />
+        <Form addItem={this.addItem} />
       </div>
     );
   }
