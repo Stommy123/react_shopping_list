@@ -20,7 +20,6 @@ class ItemForm extends Component {
     const { value } = this.state
     const { itemValidation } = this.props
     return (
-      <div>
         <form className="form" onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -35,7 +34,6 @@ class ItemForm extends Component {
             type="submit"
             />
         </form>
-      </div>
     )
   }
 }
